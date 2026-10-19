@@ -1,0 +1,61 @@
+/* Thiết lập chung để padding không làm tăng kích thước khối */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Chứa toàn bộ Gallery */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép rớt dòng khi không đủ chỗ */
+    padding: 0 10px;
+}
+
+/* Mặc định cho màn hình > 700px: 4 ảnh 1 dòng (25% mỗi ảnh) */
+.gallery-item {
+    width: 25%;
+    padding: 10px;
+}
+
+/* Định dạng thẻ chứa ảnh để trông đẹp hơn (tùy chọn) */
+.img-box {
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+.img-box img {
+    width: 100%;
+    height: auto; /* Giữ nguyên tỷ lệ khung hình của ảnh */
+    display: block;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+    color: #333;
+}
+
+/* =========================================
+   MEDIA QUERIES (Phần trọng tâm bài toán)
+   ========================================= */
+
+/* Khi màn hình nhỏ hơn hoặc bằng 700px: 2 ảnh 1 dòng (50%) */
+@media screen and (max-width: 700px) {
+    .gallery-item {
+        width: 50%;
+    }
+}
+
+/* Khi màn hình nhỏ hơn hoặc bằng 500px: 1 ảnh 1 dòng (100%) */
+@media screen and (max-width: 500px) {
+    .gallery-item {
+        width: 100%;
+    }
+}
